@@ -271,7 +271,7 @@ class Database {
 				'tstamp' => time(),
 				'crdate' => time(),
 				'be_users_uid' => $BeUserId,
-				'SelectedLanguages' => '',
+				'SelectedLanguages' => '0',
 			)
 		);
 
