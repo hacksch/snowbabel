@@ -1447,12 +1447,10 @@ class Translations {
 	 */
 	private function getCacheFileName($FilePath, $Language = 'default') {
 
-		$hashSource = substr($FilePath, strlen(PATH_site)) . '|' . date('d-m-Y H:i:s', filemtime($FilePath)) . '|version=2.3';
-		$hash = '_' . GeneralUtility::shortMD5($hashSource);
-		$tempPath = PATH_site . 'typo3temp/llxml/';
-		$fileExtension = substr(basename($FilePath), 10, 15);
-
-		return $tempPath . $fileExtension . $hash . '.' . $Language . '.' . 'utf-8' . '.cache';
+		$hashSource = 'EXT:' .substr($FilePath, strlen(PATH_site . 'typo3conf/ext/')) . $Language . 'utf-8';
+		$fileName = md5($hashSource);
+		$tempPath = PATH_site . 'typo3temp/Cache/Data/l10n/';
+		return $tempPath . $fileName;
 	}
 
 }
