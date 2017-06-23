@@ -1449,7 +1449,7 @@ class Translations {
 
 		$hashSource = 'EXT:' .substr($FilePath, strlen(PATH_site . 'typo3conf/ext/')) . $Language . 'utf-8';
 		$fileName = md5($hashSource);
-		$tempPath = PATH_site . 'typo3temp/Cache/Data/l10n/';
+		$tempPath = PATH_site . 'typo3temp/var/Cache/Data/l10n/';
 		return $tempPath . $fileName;
 	}
 
